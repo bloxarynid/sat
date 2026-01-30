@@ -2,14 +2,10 @@
 
 [![NPM version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/BloxaryID/sat)
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/BloxaryID/sat/blob/main/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/BloxaryID/sat)](https://github.com/BloxaryID/sat/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/BloxaryID/sat)](https://github.com/BloxaryID/sat/network)
-
-[![Twitter Follow](https://img.shields.io/twitter/follow/bloxaryid.svg?style=social)](https://twitter.com/bloxaryid) [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/home?status=SAT%20-%20Scroll%20Animation%20Tool%20by%20BloxaryID%0Ahttps%3A//github.com/BloxaryID/sat)
 
 ---
 
-## 🚀 [Demo & Contoh](https://bloxaryid.github.io/sat/)
+## 🚀 [Demo & Contoh](https://bloxarynid.github.io/sat/)
 
 ### 🌟 Fitur Utama
 - **60+ Animasi** siap pakai
@@ -27,13 +23,13 @@
 Tambahkan stylesheet di `<head>`:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/BloxaryID/sat@main/sat/sat.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bloxarynid/sat@main/sat/sat.css">
 ```
 
 Tambahkan script sebelum penutup </body>:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/BloxaryID/sat@main/script/script.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/bloxarynid/sat@main/script/script.js"></script>
 ```
 
 ---
@@ -83,53 +79,87 @@ SAT.init({
 Animasi Fade
 
 · sat-fade-up - Muncul dari bawah
+
 · sat-fade-down - Muncul dari atas
+
 · sat-fade-left - Muncul dari kanan
+
 · sat-fade-right - Muncul dari kiri
+
 · sat-fade-up-left - Muncul dari kanan bawah
+
 · sat-fade-up-right - Muncul dari kiri bawah
+
 · sat-fade-down-left - Muncul dari kanan atas
+
 · sat-fade-down-right - Muncul dari kiri atas
+
 
 Animasi Zoom
 
 · sat-zoom-in - Zoom masuk dari kecil
+
 · sat-zoom-out - Zoom keluar dari besar
+
 · sat-zoom-in-up - Zoom masuk dari bawah
+
 · sat-zoom-in-down - Zoom masuk dari atas
+
 · sat-zoom-in-left - Zoom masuk dari kanan
+
 · sat-zoom-in-right - Zoom masuk dari kiri
+
 · sat-zoom-out-up - Zoom keluar ke atas
+
 · sat-zoom-out-down - Zoom keluar ke bawah
+
 · sat-zoom-out-left - Zoom keluar ke kiri
+
 · sat-zoom-out-right - Zoom keluar ke kanan
+
 
 Animasi Slide
 
 · sat-slide-up - Geser dari bawah
+
 · sat-slide-down - Geser dari atas
+
 · sat-slide-left - Geser dari kanan
+
 · sat-slide-right - Geser dari kiri
+
 
 Animasi Flip
 
 · sat-flip-left - Flip dari kiri
+
 · sat-flip-right - Flip dari kanan
+
 · sat-flip-up - Flip dari atas
+
 · sat-flip-down - Flip dari bawah
+
 
 Animasi Blur
 
 · sat-blur - Blur sederhana
+
 · sat-blur-up - Blur dari bawah
+
 · sat-blur-down - Blur dari atas
+
 · sat-blur-left - Blur dari kanan
+
 · sat-blur-right - Blur dari kiri
+
 · sat-blur-zoom-in - Blur + zoom in
+
 · sat-blur-zoom-out - Blur + zoom out
+
 · sat-blur-glass - Efek glassmorphism
 
 ---
+
 
 ⚙️ Kontrol Animasi
 
@@ -334,9 +364,9 @@ MIT License © 2026 Bloxaryn.id
 
 Bloxaryn.id
 
-· GitHub: @BloxaryID
-· Twitter: @bloxaryid
-· Website: bloxaryn.id
+· GitHub: @BloxarynID
+· TikTok: @bloxaryid
+· Website: bloxarynid.github.io
 
 ---
 
