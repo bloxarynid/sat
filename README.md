@@ -1,6 +1,6 @@
 [![SAT - Scroll Animation Tool](https://via.placeholder.com/800x200/667eea/ffffff?text=SAT+-+Scroll+Animation+Tool)](https://bloxaryid.github.io/sat)
 
-[![NPM version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/BloxaryID/sat)
+[![NPM version](https://img.shields.io/badge/version-1.0.5-blue)](https://github.com/BloxaryID/sat)
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/BloxaryID/sat/blob/main/LICENSE)
 
 ---
