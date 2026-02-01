@@ -3,465 +3,206 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SAT - Scroll Animation Tool</title>
-  <meta name="description" content="Hello, I'm Bloxaryn.id and this is my project SAT, inspired by AOS.">
-  <link rel="stylesheet" href="style/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bloxarynid/sat@main/sat/sat.css">
+  <title>Bloxaryn Portofolio</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="httpsr.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bloxarynid/sat@main/sat/sat.css">
 </head>
 <body>
+  
+  <!--- COPYRIGHT BACKGROUND BY @Minecraft --->
   <video class="video-bg" autoplay muted loop playsinline>
     <source src="https://ugc.production.linktr.ee/GmBMm8JSFGys3WOA7tTk_610088a0-34ca-4f57-ae57-491aaacd3653_8zC4MSUKr9se1HR9.mp4/AppleHLS1/GmBMm8JSFGys3WOA7tTk_610088a0-34ca-4f57-ae57-491aaacd3653_8zC4MSUKr9se1HR9.m3u8" type="video/mp4">
   </video>
-  <header class="header">
-    <h1 class="title sat-fade-down sat-duration-800"><i class="fas fa-box"></i> SAT TESTER</h1>
-    <p class="subtitle sat-fade-up sat-duration-1000 sat-delay-200">
-      Scroll Animation Tool - Class Version
-    </p>
-    <div class="status-bar sat-fade-up sat-duration-1200 sat-delay-400">
-      <span class="status"><i class="fas fa-check-circle"></i>  SAT.css Loaded    </span>
-      <span class="status"><i class="fas fa-bullseye"></i>  60 Animations Ready</span>
-    </div>
+  <header>
+    <nav>
+      <a href="https://bloxarynid.github.io/Bloxaryn.Id"><img style="background: linear-gradient(180deg, #4e65ff, #92effd);" class="icon" src="image/icon/absen11.jpg"></a>
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">
+        <div class="hamburger-lines">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </label>
+      <ul class="menu">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="close">
+          <i class="fas fa-times close"></i>
+        </label>
+        <li><a href="#beranda">Home</a></li>
+        <li><a href="#me">Tentang</a></li>
+        <li><a href="#projek">Projek</a></li>
+        <li><a href="#sosial">Sosial & Contact</a></li>
+        <li><a href="#audio">Audio</a></li>
+      </ul>
+    </nav>
   </header>
-
-  <section class="control-panel sat-fade-up sat-duration-900">
-    <h2>🎛️ Control Panel</h2>
-    <div class="controls">
-      <button onclick="toggleAnimations()" class="btn">⏯️ Toggle Animations</button>
-      <button onclick="resetAnimations()" class="btn">🔄 Reset All</button>
-      <button onclick="scrollToTest()" class="btn">👇 Scroll to Tests</button>
+  <section id="beranda">
+    <div class="bingkai sizing" style="margin-bottom:25px;">
+      <img src="image/icon/absen11.jpg" alt="My My My">
+    </div>
+    <svg viewBox="0 0 1320 300">
+      <text x="50%" y="50%" text-anchor="middle">
+        <a class="tumbal">BLOXARYN.ID</a>
+      </text>
+    </svg>
+    <div class="abt-me-container" style="animation: floatFadeIn 2.0s ease-out forwards;">
+      <h3 class="abt-me">Hello I'm <span style="color:#7cd8ff;">Bloxaryn.Id</span></h3>
+      <p style="font-size:30px; padding: 30px 160px;">Aku seorang <span style="color:#71ceff;">Front End Developer!</span>, saya memiliki cita ini sebelum tanggal 1 Januari 2026 ini. Saya bermain <span style="color:#71ceff;">Minecraft</span> dan saya terobsesi oleh game tersebut, jadi saya membuat website ini menggunakan tema <span style="color:#71ceff;">Minecraft!</span></p>
+      <a href="#me" style="text-decoration: none;">
+      <button class="me-btn">Kenali Saya</button>
+    </a>
+    </div>
+    <div class="kelompok-2">
+      <div class="hp">
+        <p>Front End Developer</p>
+      </div>
+      <a href="#me" style="text-decoration: none;">
+      <button class="me-btn">Kenali Saya</button>
+    </a>
     </div>
   </section>
-
-  <main class="container">
-    <h2 class="section-title sat-fade-left sat-duration-800">🧪 Animation Tests</h2>
-    
-    <section class="test-section">
-      <h3 class="sat-fade-up sat-duration-700">🎭 Fade Animations</h3>
-      
-      <div class="test-grid">
-        <div class="test-card sat-fade-up sat-duration-500">
-          <div class="card-header">⬆️ Fade Up</div>
-          <code>class="sat-fade-up"</code>
-        </div>
-        
-        <div class="test-card sat-fade-down sat-duration-500 sat-delay-100">
-          <div class="card-header">⬇️ Fade Down</div>
-          <code>class="sat-fade-down"</code>
-        </div>
-        
-        <div class="test-card sat-fade-left sat-duration-500 sat-delay-200">
-          <div class="card-header">⬅️ Fade Left</div>
-          <code>class="sat-fade-left"</code>
-        </div>
-        
-        <div class="test-card sat-fade-right sat-duration-500 sat-delay-300">
-          <div class="card-header">➡️ Fade Right</div>
-          <code>class="sat-fade-right"</code>
-        </div>
-        
-        <div class="test-card sat-fade-up-left sat-duration-600 sat-delay-400">
-          <div class="card-header">↖️ Fade Up-Left</div>
-          <code>class="sat-fade-up-left"</code>
-        </div>
-        
-        <div class="test-card sat-fade-up-right sat-duration-600 sat-delay-500">
-          <div class="card-header">↗️ Fade Up-Right</div>
-          <code>class="sat-fade-up-right"</code>
-        </div>
-        
-        <div class="test-card sat-fade-down-left sat-duration-600 sat-delay-600">
-          <div class="card-header">↙️ Fade Down-Left</div>
-          <code>class="sat-fade-down-left"</code>
-        </div>
-        
-        <div class="test-card sat-fade-down-right sat-duration-600 sat-delay-700">
-          <div class="card-header">↘️ Fade Down-Right</div>
-          <code>class="sat-fade-down-right"</code>
-        </div>
+  <section id="me" style="margin-top:245px;" class="sat-fade-up sat-duration-900 sat-delay-100">
+    <div class="wadah">
+      <h2 class="title">Tentang Saya</h2>
+      <div class="bingkai">
+        <img src="image/icon/absen11.jpg">
       </div>
-    </section>
-
-    <section class="test-section">
-      <h3 class="sat-fade-up sat-duration-800">🔍 Zoom Animations</h3>
-      
-      <div class="test-grid">
-        <div class="test-card sat-zoom-in sat-duration-700">
-          <div class="card-header">🔎 Zoom In</div>
-          <code>class="sat-zoom-in"</code>
-        </div>
-        
-        <div class="test-card sat-zoom-out sat-duration-700 sat-delay-100">
-          <div class="card-header">🔍 Zoom Out</div>
-          <code>class="sat-zoom-out"</code>
-        </div>
-        
-        <div class="test-card sat-zoom-in-up sat-duration-800 sat-delay-200">
-          <div class="card-header">🔎⬆️ Zoom In Up</div>
-          <code>class="sat-zoom-in-up"</code>
-        </div>
-        
-        <div class="test-card sat-zoom-in-down sat-duration-800 sat-delay-300">
-          <div class="card-header">🔎⬇️ Zoom In Down</div>
-          <code>class="sat-zoom-in-down"</code>
-        </div>
-        
-        <div class="test-card sat-zoom-in-left sat-duration-800 sat-delay-400">
-          <div class="card-header">🔎⬅️ Zoom In Left</div>
-          <code>class="sat-zoom-in-left"</code>
-        </div>
-        
-        <div class="test-card sat-zoom-in-right sat-duration-800 sat-delay-500">
-          <div class="card-header">🔎➡️ Zoom In Right</div>
-          <code>class="sat-zoom-in-right"</code>
-        </div>
-        
-        <div class="test-card sat-zoom-out-up sat-duration-900 sat-delay-600">
-          <div class="card-header">🔍⬆️ Zoom Out Up</div>
-          <code>class="sat-zoom-out-up"</code>
-        </div>
-        
-        <div class="test-card sat-zoom-out-down sat-duration-900 sat-delay-700">
-          <div class="card-header">🔍⬇️ Zoom Out Down</div>
-          <code>class="sat-zoom-out-down"</code>
-        </div>
-        
-        <div class="test-card sat-zoom-out-left sat-duration-900 sat-delay-800">
-          <div class="card-header">🔍⬅️ Zoom Out Left</div>
-          <code>class="sat-zoom-out-left"</code>
-        </div>
-        
-        <div class="test-card sat-zoom-out-right sat-duration-900 sat-delay-900">
-          <div class="card-header">🔍➡️ Zoom Out Right</div>
-          <code>class="sat-zoom-out-right"</code>
-        </div>
-      </div>
-    </section>
-
-    <section class="test-section">
-      <h3 class="sat-fade-up sat-duration-900">➡️ Slide Animations</h3>
-      
-      <div class="test-grid">
-        <div class="test-card sat-slide-up sat-duration-600">
-          <div class="card-header">⬆️ Slide Up</div>
-          <code>class="sat-slide-up"</code>
-        </div>
-        
-        <div class="test-card sat-slide-down sat-duration-600 sat-delay-150">
-          <div class="card-header">⬇️ Slide Down</div>
-          <code>class="sat-slide-down"</code>
-        </div>
-        
-        <div class="test-card sat-slide-left sat-duration-600 sat-delay-300">
-          <div class="card-header">⬅️ Slide Left</div>
-          <code>class="sat-slide-left"</code>
-        </div>
-        
-        <div class="test-card sat-slide-right sat-duration-600 sat-delay-450">
-          <div class="card-header">➡️ Slide Right</div>
-          <code>class="sat-slide-right"</code>
-        </div>
-      </div>
-    </section>
-
-    <section class="test-section">
-      <h3 class="sat-fade-up sat-duration-1000">🔄 Flip Animations</h3>
-      
-      <div class="test-grid">
-        <div class="test-card sat-flip-left sat-duration-800">
-          <div class="card-header">🔄 Flip Left</div>
-          <code>class="sat-flip-left"</code>
-        </div>
-        
-        <div class="test-card sat-flip-right sat-duration-800 sat-delay-200">
-          <div class="card-header">🔄 Flip Right</div>
-          <code>class="sat-flip-right"</code>
-        </div>
-        
-        <div class="test-card sat-flip-up sat-duration-800 sat-delay-400">
-          <div class="card-header">🔄 Flip Up</div>
-          <code>class="sat-flip-up"</code>
-        </div>
-        
-        <div class="test-card sat-flip-down sat-duration-800 sat-delay-600">
-          <div class="card-header">🔄 Flip Down</div>
-          <code>class="sat-flip-down"</code>
-        </div>
-      </div>
-    </section>
-
-    <section class="test-section">
-      <h3 class="sat-fade-up sat-duration-1100">⏱️ Duration Test</h3>
-      
-      <div class="test-grid">
-        <div class="test-card sat-fade-up sat-duration-300">
-          <div class="card-header">⚡ Fast (300ms)</div>
-          <code>sat-duration-300</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-duration-1000">
-          <div class="card-header">🐌 Slow (1000ms)</div>
-          <code>sat-duration-1000</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-duration-2000">
-          <div class="card-header">🐢 Very Slow (2000ms)</div>
-          <code>sat-duration-2000</code>
-        </div>
-      </div>
-    </section>
-
-    <section class="test-section">
-      <h3 class="sat-fade-up sat-duration-1200">⏰ Delay Test</h3>
-      
-      <div class="delay-test">
-        <div class="test-card sat-fade-up sat-delay-0">
-          <div class="card-header">0ms Delay</div>
-          <code>sat-delay-0</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-delay-500">
-          <div class="card-header">500ms Delay</div>
-          <code>sat-delay-500</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-delay-1000">
-          <div class="card-header">1000ms Delay</div>
-          <code>sat-delay-1000</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-delay-1500">
-          <div class="card-header">1500ms Delay</div>
-          <code>sat-delay-1500</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-delay-2000">
-          <div class="card-header">2000ms Delay</div>
-          <code>sat-delay-2000</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-delay-2500">
-          <div class="card-header">2500ms Delay</div>
-          <code>sat-delay-2500</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-delay-3000">
-          <div class="card-header">3000ms Delay</div>
-          <code>sat-delay-3000</code>
-        </div>
-      </div>
-    </section>
-
-    <section class="test-section">
-      <h3 class="sat-fade-up sat-duration-1300">📈 Easing Functions Lengkap</h3>
-      
-      <div class="test-grid">
-        <div class="test-card sat-fade-up sat-easing-linear sat-duration-1000">
-          <div class="card-header">📏 Linear</div>
-          <code>sat-easing-linear</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-easing-ease sat-duration-1000">
-          <div class="card-header">📊 Ease</div>
-          <code>sat-easing-ease</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-easing-ease-in sat-duration-1000">
-          <div class="card-header">📈 Ease In</div>
-          <code>sat-easing-ease-in</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-easing-ease-out sat-duration-1000">
-          <div class="card-header">📉 Ease Out</div>
-          <code>sat-easing-ease-out</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-easing-ease-in-out sat-duration-1000">
-          <div class="card-header">📊 Ease In-Out</div>
-          <code>sat-easing-ease-in-out</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-easing-ease-in-back sat-duration-1000">
-          <div class="card-header">🎢 Ease In Back</div>
-          <code>sat-easing-ease-in-back</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-easing-ease-out-back sat-duration-1000">
-          <div class="card-header">🎢 Ease Out Back</div>
-          <code>sat-easing-ease-out-back</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-easing-ease-in-out-back sat-duration-1000">
-          <div class="card-header">🎢 Ease In-Out Back</div>
-          <code>sat-easing-ease-in-out-back</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-easing-ease-in-sine sat-duration-1000">
-          <div class="card-header">📈 Ease In Sine</div>
-          <code>sat-easing-ease-in-sine</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-easing-ease-out-sine sat-duration-1000">
-          <div class="card-header">📉 Ease Out Sine</div>
-          <code>sat-easing-ease-out-sine</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-easing-ease-in-out-sine sat-duration-1000">
-          <div class="card-header">📊 Ease In-Out Sine</div>
-          <code>sat-easing-ease-in-out-sine</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-easing-ease-in-quad sat-duration-1000">
-          <div class="card-header">📈 Ease In Quad</div>
-          <code>sat-easing-ease-in-quad</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-easing-ease-out-quad sat-duration-1000">
-          <div class="card-header">📉 Ease Out Quad</div>
-          <code>sat-easing-ease-out-quad</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-easing-ease-in-out-quad sat-duration-1000">
-          <div class="card-header">📊 Ease In-Out Quad</div>
-          <code>sat-easing-ease-in-out-quad</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-easing-ease-in-cubic sat-duration-1000">
-          <div class="card-header">📈 Ease In Cubic</div>
-          <code>sat-easing-ease-in-cubic</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-easing-ease-out-cubic sat-duration-1000">
-          <div class="card-header">📉 Ease Out Cubic</div>
-          <code>sat-easing-ease-out-cubic</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-easing-ease-in-out-cubic sat-duration-1000">
-          <div class="card-header">📊 Ease In-Out Cubic</div>
-          <code>sat-easing-ease-in-out-cubic</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-easing-ease-in-quart sat-duration-1000">
-          <div class="card-header">📈 Ease In Quart</div>
-          <code>sat-easing-ease-in-quart</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-easing-ease-out-quart sat-duration-1000">
-          <div class="card-header">📉 Ease Out Quart</div>
-          <code>sat-easing-ease-out-quart</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-easing-ease-in-out-quart sat-duration-1000">
-          <div class="card-header">📊 Ease In-Out Quart</div>
-          <code>sat-easing-ease-in-out-quart</code>
-        </div>
-      </div>
-    </section>
-
-    <section class="test-section">
-      <h3 class="sat-fade-up sat-duration-1400">🎯 Combination Test</h3>
-      
-      <div class="test-grid">
-        <div class="test-card sat-zoom-in sat-fade-up sat-duration-800 sat-delay-200 sat-easing-ease-out-back">
-          <div class="card-header">🔎⬆️ Zoom + Fade</div>
-          <code>Multiple Classes</code>
-        </div>
-        
-        <div class="test-card sat-flip-left sat-duration-1200 sat-delay-400 sat-easing-ease-in-out">
-          <div class="card-header">🔄 Flip + Delay</div>
-          <code>Flip with 400ms delay</code>
-        </div>
-      </div>
-    </section>
-
-    <section class="test-section">
-      <h3 class="sat-fade-up sat-duration-1500">⚡ Performance Test</h3>
-      
-      <div class="performance-test">
-        <div class="test-card sat-fade-up sat-optimize sat-duration-500">
-          <div class="card-header">⚡ Optimized</div>
-          <code>sat-optimize (will-change)</code>
-        </div>
-        
-        <div class="test-card sat-fade-up sat-duration-500 sat-mobile-disable" style="margin:25px 0;">
-          <div class="card-header">📱 Mobile Disabled</div>
-          <code>sat-mobile-disable</code>
-        </div>
-      </div>
-    </section>
-    <section class="test-section">
-    <h3 class="sat-fade-up sat-duration-1050">🌀 Blur Animations</h3>
-    
-    <div class="test-grid">
-        <div class="test-card sat-blur sat-duration-800">
-            <div class="card-header">🌀 Simple Blur</div>
-            <code>class="sat-blur"</code>
-        </div>
-        
-        <div class="test-card sat-blur-up sat-duration-800 sat-delay-100">
-            <div class="card-header">🌀⬆️ Blur Up</div>
-            <code>class="sat-blur-up"</code>
-        </div>
-        
-        <div class="test-card sat-blur-down sat-duration-800 sat-delay-200">
-            <div class="card-header">🌀⬇️ Blur Down</div>
-            <code>class="sat-blur-down"</code>
-        </div>
-        
-        <div class="test-card sat-blur-left sat-duration-800 sat-delay-300">
-            <div class="card-header">🌀⬅️ Blur Left</div>
-            <code>class="sat-blur-left"</code>
-        </div>
-        
-        <div class="test-card sat-blur-right sat-duration-800 sat-delay-400">
-            <div class="card-header">🌀➡️ Blur Right</div>
-            <code>class="sat-blur-right"</code>
-        </div>
-        
-        <div class="test-card sat-blur-zoom-in sat-duration-900 sat-delay-500">
-            <div class="card-header">🌀🔎 Blur Zoom In</div>
-            <code>class="sat-blur-zoom-in"</code>
-        </div>
-        
-        <div class="test-card sat-blur-zoom-out sat-duration-900 sat-delay-600">
-            <div class="card-header">🌀🔍 Blur Zoom Out</div>
-            <code>class="sat-blur-zoom-out"</code>
-        </div>
-        
-        <div class="test-card sat-blur-glass sat-duration-1000 sat-delay-700">
-            <div class="card-header">🥃 Glass Blur</div>
-            <code>class="sat-blur-glass"</code>
-        </div>
+      <article class="artikel">
+        <h2>Bloxaryn.Id</h2>
+        <p style="font-weight: 550;">&emsp;Halo! Saya Bloxaryn.id (Dwika Hadi Wijaya). Cita-cita saya adalah menjadi seorang <strong>Front End Developer</strong> yang handal. Untuk mencapainya, saya saat ini aktif mempelajari dasar-dasar HTML dan CSS.</p>
+        <p style="font-weight: 550;">&emsp;Proses belajar saya dilakukan secara bertahap. DeepSeek menjadi teman diskusi yang membantu memperjelas pemahaman dan manfaat setiap kode, sementara TikTok serta media sosial memberi saya inspirasi template dan animasi kreatif untuk pengembangan visual.</p>
+        <p style="font-weight: 550;">&emsp;Saya sedang membangun fondasi yang kuat. Di HTML, saya mempelajari peran setiap tag, penggunaan atribut, dan seni menyusun serta mengelompokkan elemen dengan struktur yang rapi dan bermakna. Sementara di CSS, saya mendalami cara mengatur tata letak, menjembatani jarak antar elemen, memberikan gaya, menciptakan animasi sederhana, dan—yang krusial—memastikan setiap halaman web tetap responsif di berbagai perangkat.</p>
+        <p style="font-weight: 550;">&emsp;Rencana ke depan, setelah saya merasa cukup percaya diri dengan dasar-dasar ini, saya akan melangkah untuk mempelajari JavaScript untuk menghidupkan website dengan interaktivitas, lalu beralih ke Tailwind CSS untuk mempercepat dan memperdalam proses pengembangan antarmuka yang modern.</p>
+        <p style="font-weight: 550;padding-bottom:18px;">&emsp;Walaupun masih duduk di bangku SMP, saya tidak pernah goyah hanya karena melihat kemajuan orang lain, atau berbeda dengan impian mereka. Saya tetap fokus pada jalan saya sendiri. Di bawah ini, kalian bisa melihat semua proyek yang telah saya buat...</p>
+      </article>
     </div>
-</section>
-  </main>
-
-  <footer class="footer sat-fade-up sat-duration-1600">
-    <div class="footer-content">
-      <h3>📦 SAT Framework</h3>
-      <p>Scroll Animation Tool - Class Version</p>
-      <p class="copyright">Inspired by AOS Tools By Bloxary.Id, 2026</p>
-      <div class="stats">
-        <span>🎯 60+ Animations</span>
-        <span>⚡ Pure CSS</span>
-        <span>📱 Responsive</span>
-        <h3 style="padding:15px 0 8px 0;">How To Install</h3>
-        <p style="padding-bottom:6px 5px 6px 0;;">On Head tag:</p>
-        <div class="bg-code">
-          <code style="padding: 0 2.5px 0 2.5px; text-align:start;">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bloxarynid/sat@main/sat/sat.css"&gt;</code>
+  </section>
+  
+  <section id="projek" class="sat-fade-up sat-duration-900 sat-delay-100">
+    <h2 class="title">My Project</h2>
+    <div class="wadah scroll">
+      <div class="wadah-kartu">
+        <div class="kartu">
+          <img src="image/1.jpg">
+          <div class="info-kartu">
+            <a href="https://bloxarynid.github.io/MinePack" target="_blank">
+              <h2>MinePack</h2>
+            </a>
+            <p>addons for Minecraft</p>
+          </div>
         </div>
-          
-        <p style="padding:8px 5px 6px 0;">On Body tag:</p>
-        <div class="bg-code">
-          <code style="padding: 0 2.5px 0 2.5px;text-align:start;">&lt;script src="https://cdn.jsdelivr.net/gh/bloxarynid/sat@main/script/script.js"&gt;</code>
+        <div class="kartu">
+          <img src="image/2.jpg">
+          <div class="info-kartu">
+            <a href="https://bloxarynid.github.io/3dWebsite" target="_blank">
+              <h2>3d Website</h2>
+            </a>
+            <p>Website ini merupakan web untuk memunculkan tampilan 3d, buatan Gemini 3.0 Pro!</p>
+          </div>
+        </div>
+        <div class="kartu">
+          <img src="image/3.jpg">
+          <div class="info-kartu">
+            <a href="https://github.com/bloxarynid/sat" target="_blank">
+              <h2>SAT</h2>
+            </a>
+            <p>kumpulan animasi scroll</p>
+          </div>
+        </div>
+        <div class="kartu">
+          <img src="image/4.jpg">
+          <div class="info-kartu">
+            <a href="https://bloxarynid.github.io/Bloxaryn-Project/BloxDecoder/" target="_blank">
+              <h2>Encryption</h2>
+            </a>
+            <p>Website untuk memecahkan/mengubah text biasa ke biner, caesar chiper, dan kode morse. Atau sebaliknya!</p>
+          </div>
+        </div>
+        <div class="kartu">
+          <img src="image/5.jpg">
+          <div class="info-kartu">
+            <a href="https://bloxarynid.github.io/7dClass" target="_blank">
+              <h2>7dClass</h2>
+            </a>
+            <p>Website utama kelas 7D-Esphero</p>
+          </div>
+        </div>
+        <div class="kartu">
+          <img src="image/6.jpg">
+          <div class="info-kartu">
+            <a href="https://bloxarynid.github.io/Bloxaryn.Id" target="_blank">
+              <h2>Portofolio</h2>
+            </a>
+            <p>Website portofolio oleh bloxaryn</p>
+          </div>
         </div>
       </div>
     </div>
+  </section>
+  <section id="sosial" class="sat-fade-up sat-duration-3000 sat-delay-100">
+  <div class="wadah sat-fade-up sat-delay-300">
+      <h2 class="title">Social</h2>
+      <div class="card-flip-container">
+        <div class="card-flip">
+          <div class="konten">
+            <div class="front">
+              <i class="fa-brands fa-tiktok fa-fade fa-2xl" style="color: #777777;"></i>
+            </div>
+            <div class="back">
+              <a href="https://tiktok.com/@bloxaryn.id" target="_blank">TikTok</a>
+            </div>
+          </div>
+        </div>
+        <div class="card-flip">
+          <div class="konten">
+            <div class="front">
+              <i class="fa-brands fa-whatsapp fa-fade fa-2xl" style="color: #777777;"></i>
+            </div>
+            <div class="back">
+              <a href="https://whatsapp.com/channel/0029VbBJaB46RGJIkJ874X3d" target="_blank" style="font-weight: 150;font-size: 10px;">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+        <div class="card-flip">
+          <div class="konten">
+            <div class="front">
+              <i class="fa-brands fa-github fa-fade fa-2xl" style="color: #777777;"></i>
+            </div>
+            <div class="back">
+              <a href="https://github.com/bloxarynid/" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="card-flip">
+          <div class="konten">
+            <div class="front">
+              <i class="fa-regular fa-envelope fa-fade fa-2xl" style="color: #777777;"></i>
+            </div>
+            <div class="back">
+              <a href="mailto:bloxaryn.id@gmail.com" target="_blank">Email</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="audio" class="sat-fade-up sat-duration-900 sat-delay-100">
+  <div class="wadah sat-fade-up sat-delay-500">
+      <h2 class="title">Audio</h2>
+      <audio class="audio" src="audio/backsound.mp3" loop controls></audio>
+    </div>
+  </section>
+  <footer class="foot" style="font-family: 'Minecraft Font';color: #e0e0e0;">
+      <p class="copyright">
+        Hak cipta © 2026 - <a href="https://bloxarynid.github.io/Bloxaryn.Id" target="_blank" style="text-decoration:none;color:#e0e0e0;">@Bloxaryn.id</a>
+      </p>
   </footer>
-
-  <button class="scroll-top sat-fade-up" onclick="scrollToTop()">⬆️</button>
-
-<script src="https://cdn.jsdelivr.net/gh/bloxarynid/sat@main/script/script.js">
-</script>
+  <script src="https://cdn.jsdelivr.net/gh/bloxarynid/sat@main/script/script.js"></script>
 </body>
 </html>
