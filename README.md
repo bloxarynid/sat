@@ -25,30 +25,38 @@
 
 ## 📦 Instalasi
 
-### CDN (Rekomendasi)
+SAT tersedia dalam 2 versi terpisah untuk memudahkan penggunaan:
 
-Tambahkan di `<head>`:
+### **🔄 Versi Transition System** (CSS Transition)
+Untuk animasi yang smooth dan berbasis transition CSS.
+
 ```html
-<!-- SAT CSS -->
+<!-- SAT CSS Transition -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bloxarynid/sat@main/sat/sat.css">
-```
 
-Tambahkan sebelum penutup </body>:
-
-```html
 <!-- SAT JavaScript -->
 <script src="https://cdn.jsdelivr.net/gh/bloxarynid/sat@main/script/script.js"></script>
 ```
 
-Manual Download
+🎞️ Versi Animation System (Keyframe Animation)
 
-1. Download dari GitHub Releases
-2. Include file di project Anda:
+Untuk animasi yang lebih kompleks dan berbasis keyframe CSS.
 
 ```html
-<link rel="stylesheet" href="path/to/sat.css">
-<script src="path/to/script.js"></script>
+<!-- SAT CSS Animation -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bloxarynid/sat@main/sat/animation.sat.css">
+
+<!-- SAT JavaScript Animation -->
+<script src="https://cdn.jsdelivr.net/gh/bloxarynid/sat@main/script/animation.sat.js"></script>
 ```
+
+📥 Manual Download
+
+1. Download dari GitHub Releases
+2. Pilih versi yang diinginkan:
+   · SAT-Transition.zip - Hanya sistem transition
+   · SAT-Animation.zip - Hanya sistem animation
+   · SAT-Full.zip - Kedua sistem lengkap
 
 ---
 
@@ -57,10 +65,12 @@ Manual Download
 1. Basic Usage
 
 ```html
+<!-- Menggunakan Transition System -->
 <div class="sat-transition-fade-up">
   Animasi dengan sistem transition
 </div>
 
+<!-- Menggunakan Animation System -->
 <div class="sat-animation-fade-up">
   Animasi dengan sistem keyframe
 </div>
@@ -69,11 +79,20 @@ Manual Download
 2. Dengan Kontrol Lengkap
 
 ```html
+<!-- Transition System dengan kontrol -->
 <div class="sat-transition-zoom-in 
             sat-duration-800 
             sat-delay-200 
             sat-easing-ease-out-back">
   Zoom in dengan durasi 800ms, delay 200ms
+</div>
+
+<!-- Animation System dengan kontrol -->
+<div class="sat-animation-slide-left
+            sat-duration-1000
+            sat-delay-300
+            sat-easing-ease-in-out">
+  Slide left dengan durasi 1 detik, delay 300ms
 </div>
 ```
 
@@ -126,54 +145,54 @@ Menggunakan CSS @keyframes untuk animasi yang lebih kompleks.
 🎭 Animasi Fade
 
 Class Description Transition Animation
-sat-transition-fade-up Muncul dari bawah ✅ ✅
-sat-transition-fade-down Muncul dari atas ✅ ✅
-sat-transition-fade-left Muncul dari kanan ✅ ✅
-sat-transition-fade-right Muncul dari kiri ✅ ✅
-sat-transition-fade-up-left Muncul dari kanan bawah ✅ ✅
-sat-transition-fade-up-right Muncul dari kiri bawah ✅ ✅
-sat-transition-fade-down-left Muncul dari kanan atas ✅ ✅
-sat-transition-fade-down-right Muncul dari kiri atas ✅ ✅
+sat-transition-fade-up / sat-animation-fade-up Muncul dari bawah ✅ ✅
+sat-transition-fade-down / sat-animation-fade-down Muncul dari atas ✅ ✅
+sat-transition-fade-left / sat-animation-fade-left Muncul dari kanan ✅ ✅
+sat-transition-fade-right / sat-animation-fade-right Muncul dari kiri ✅ ✅
+sat-transition-fade-up-left / sat-animation-fade-up-left Muncul dari kanan bawah ✅ ✅
+sat-transition-fade-up-right / sat-animation-fade-up-right Muncul dari kiri bawah ✅ ✅
+sat-transition-fade-down-left / sat-animation-fade-down-left Muncul dari kanan atas ✅ ✅
+sat-transition-fade-down-right / sat-animation-fade-down-right Muncul dari kiri atas ✅ ✅
 
 🔍 Animasi Zoom
 
 Class Description Transition Animation
-sat-transition-zoom-in Zoom masuk dari kecil ✅ ✅
-sat-transition-zoom-out Zoom keluar dari besar ✅ ✅
-sat-transition-zoom-in-up Zoom masuk dari bawah ✅ ✅
-sat-transition-zoom-in-down Zoom masuk dari atas ✅ ✅
-sat-transition-zoom-in-left Zoom masuk dari kanan ✅ ✅
-sat-transition-zoom-in-right Zoom masuk dari kiri ✅ ✅
-sat-transition-zoom-out-up Zoom keluar ke atas ✅ ✅
-sat-transition-zoom-out-down Zoom keluar ke bawah ✅ ✅
+sat-transition-zoom-in / sat-animation-zoom-in Zoom masuk dari kecil ✅ ✅
+sat-transition-zoom-out / sat-animation-zoom-out Zoom keluar dari besar ✅ ✅
+sat-transition-zoom-in-up / sat-animation-zoom-in-up Zoom masuk dari bawah ✅ ✅
+sat-transition-zoom-in-down / sat-animation-zoom-in-down Zoom masuk dari atas ✅ ✅
+sat-transition-zoom-in-left / sat-animation-zoom-in-left Zoom masuk dari kanan ✅ ✅
+sat-transition-zoom-in-right / sat-animation-zoom-in-right Zoom masuk dari kiri ✅ ✅
+sat-transition-zoom-out-up / sat-animation-zoom-out-up Zoom keluar ke atas ✅ ✅
+sat-transition-zoom-out-down / sat-animation-zoom-out-down Zoom keluar ke bawah ✅ ✅
 
 ➡️ Animasi Slide
 
 Class Description Transition Animation
-sat-transition-slide-up Geser dari bawah ✅ ✅
-sat-transition-slide-down Geser dari atas ✅ ✅
-sat-transition-slide-left Geser dari kanan ✅ ✅
-sat-transition-slide-right Geser dari kiri ✅ ✅
+sat-transition-slide-up / sat-animation-slide-up Geser dari bawah ✅ ✅
+sat-transition-slide-down / sat-animation-slide-down Geser dari atas ✅ ✅
+sat-transition-slide-left / sat-animation-slide-left Geser dari kanan ✅ ✅
+sat-transition-slide-right / sat-animation-slide-right Geser dari kiri ✅ ✅
 
 🔄 Animasi Flip
 
 Class Description Transition Animation
-sat-transition-flip-left Flip dari kiri ✅ ✅
-sat-transition-flip-right Flip dari kanan ✅ ✅
-sat-transition-flip-up Flip dari atas ✅ ✅
-sat-transition-flip-down Flip dari bawah ✅ ✅
+sat-transition-flip-left / sat-animation-flip-left Flip dari kiri ✅ ✅
+sat-transition-flip-right / sat-animation-flip-right Flip dari kanan ✅ ✅
+sat-transition-flip-up / sat-animation-flip-up Flip dari atas ✅ ✅
+sat-transition-flip-down / sat-animation-flip-down Flip dari bawah ✅ ✅
 
 🌫️ Animasi Blur
 
 Class Description Transition Animation
-sat-transition-blur Blur sederhana ✅ ✅
-sat-transition-blur-up Blur dari bawah ✅ ✅
-sat-transition-blur-down Blur dari atas ✅ ✅
-sat-transition-blur-left Blur dari kanan ✅ ✅
-sat-transition-blur-right Blur dari kiri ✅ ✅
-sat-transition-blur-zoom-in Blur + zoom in ✅ ✅
-sat-transition-blur-zoom-out Blur + zoom out ✅ ✅
-sat-transition-blur-glass Efek glassmorphism ✅ ✅
+sat-transition-blur / sat-animation-blur Blur sederhana ✅ ✅
+sat-transition-blur-up / sat-animation-blur-up Blur dari bawah ✅ ✅
+sat-transition-blur-down / sat-animation-blur-down Blur dari atas ✅ ✅
+sat-transition-blur-left / sat-animation-blur-left Blur dari kanan ✅ ✅
+sat-transition-blur-right / sat-animation-blur-right Blur dari kiri ✅ ✅
+sat-transition-blur-zoom-in / sat-animation-blur-zoom-in Blur + zoom in ✅ ✅
+sat-transition-blur-zoom-out / sat-animation-blur-zoom-out Blur + zoom out ✅ ✅
+sat-transition-blur-glass / sat-animation-blur-glass Efek glassmorphism ✅ ✅
 
 ---
 
@@ -184,7 +203,7 @@ sat-transition-blur-glass Efek glassmorphism ✅ ✅
 ```html
 <!-- Gunakan pattern: sat-duration-{value} -->
 <div class="sat-transition-fade-up sat-duration-300">Cepat (300ms)</div>
-<div class="sat-transition-fade-up sat-duration-1000">Standard (1 detik)</div>
+<div class="sat-animation-fade-up sat-duration-1000">Standard (1 detik)</div>
 <div class="sat-transition-fade-up sat-duration-2000">Lambat (2 detik)</div>
 ```
 
@@ -193,7 +212,7 @@ sat-transition-blur-glass Efek glassmorphism ✅ ✅
 ```html
 <!-- Gunakan pattern: sat-delay-{value} -->
 <div class="sat-transition-fade-up sat-delay-0">Tanpa delay</div>
-<div class="sat-transition-fade-up sat-delay-500">Delay 500ms</div>
+<div class="sat-animation-fade-up sat-delay-500">Delay 500ms</div>
 <div class="sat-transition-fade-up sat-delay-1000">Delay 1 detik</div>
 ```
 
@@ -202,23 +221,25 @@ sat-transition-blur-glass Efek glassmorphism ✅ ✅
 ```html
 <!-- Linear -->
 <div class="sat-transition-fade-up sat-easing-linear">Linear</div>
+<div class="sat-animation-fade-up sat-easing-linear">Linear</div>
 
 <!-- Standard -->
 <div class="sat-transition-fade-up sat-easing-ease">Ease</div>
-<div class="sat-transition-fade-up sat-easing-ease-in">Ease In</div>
-<div class="sat-transition-fade-up sat-easing-ease-out">Ease Out</div>
-<div class="sat-transition-fade-up sat-easing-ease-in-out">Ease In-Out</div>
+<div class="sat-animation-fade-up sat-easing-ease">Ease</div>
 
 <!-- Advanced -->
 <div class="sat-transition-fade-up sat-easing-ease-in-back">Ease In Back</div>
-<div class="sat-transition-fade-up sat-easing-ease-out-back">Ease Out Back</div>
-<div class="sat-transition-fade-up sat-easing-ease-in-out-back">Ease In-Out Back</div>
+<div class="sat-animation-fade-up sat-easing-ease-out-back">Ease Out Back</div>
 ```
 
 ⚡ Optimasi Performa
 
 ```html
 <div class="sat-transition-fade-up sat-optimize">
+  Optimized dengan will-change
+</div>
+
+<div class="sat-animation-fade-up sat-optimize">
   Optimized dengan will-change
 </div>
 ```
@@ -228,6 +249,10 @@ sat-transition-blur-glass Efek glassmorphism ✅ ✅
 ```html
 <!-- Nonaktifkan di mobile -->
 <div class="sat-transition-fade-up sat-mobile-disable">
+  Tidak animasi di perangkat mobile
+</div>
+
+<div class="sat-animation-fade-up sat-mobile-disable">
   Tidak animasi di perangkat mobile
 </div>
 ```
@@ -278,64 +303,90 @@ document.addEventListener('sat:out', function(event) {
 
 🎯 Contoh Lengkap
 
+Contoh Transition System
+
 ```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contoh SAT v2.0</title>
+  <title>Contoh SAT Transition System</title>
+  
+  <!-- Include SAT Transition System -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bloxarynid/sat@main/sat/sat.css">
+  
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: Arial, sans-serif; padding: 20px; }
     section { min-height: 100vh; padding: 50px 20px; }
     .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
-    .content { background: #f5f5f5; }
     .card { background: white; padding: 30px; margin: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
   </style>
 </head>
 <body>
   
-  <!-- Hero Section dengan Transition System -->
   <section class="hero">
     <div class="sat-transition-fade-down sat-duration-1000">
-      <h1 style="font-size: 3em; margin-bottom: 20px;">🎉 SAT v2.0</h1>
-      <p style="font-size: 1.2em;">Scroll Animation Tool dengan Dual System</p>
+      <h1 style="font-size: 3em; margin-bottom: 20px;">🔄 SAT Transition System</h1>
+      <p style="font-size: 1.2em;">Menggunakan CSS Transition untuk animasi smooth</p>
     </div>
   </section>
   
-  <!-- Content Section dengan Animation System -->
-  <section class="content">
-    <div class="sat-animation-zoom-in sat-duration-800">
+  <section>
+    <div class="sat-transition-zoom-in sat-duration-800">
       <div class="card">
-        <h2>🚀 Sistem Transition</h2>
-        <p>Menggunakan CSS transition untuk animasi smooth</p>
-      </div>
-    </div>
-    
-    <div class="sat-animation-zoom-in sat-duration-800 sat-delay-200">
-      <div class="card">
-        <h2>🎞️ Sistem Animation</h2>
-        <p>Menggunakan keyframes untuk animasi kompleks</p>
-      </div>
-    </div>
-    
-    <div class="sat-animation-zoom-in sat-duration-800 sat-delay-400">
-      <div class="card">
-        <h2>⚠️ Jangan Dicampur!</h2>
-        <p style="color: red;">Jangan gunakan sat-transition-* dan sat-animation-* di elemen yang sama!</p>
+        <h2>✨ Animasi Zoom</h2>
+        <p>Menggunakan sistem transition CSS</p>
       </div>
     </div>
   </section>
   
   <script src="https://cdn.jsdelivr.net/gh/bloxarynid/sat@main/script/script.js"></script>
-  <script>
-    // Debug info
-    setTimeout(() => {
-      console.log('SAT System:', SAT.getSystemInfo());
-    }, 1000);
-  </script>
+</body>
+</html>
+```
+
+Contoh Animation System
+
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contoh SAT Animation System</title>
+  
+  <!-- Include SAT Animation System -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bloxarynid/sat@main/sat/animation.sat.css">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    section { min-height: 100vh; padding: 50px 20px; }
+    .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+    .card { background: white; padding: 30px; margin: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body>
+  
+  <section class="hero">
+    <div class="sat-animation-fade-up sat-duration-1000">
+      <h1 style="font-size: 3em; margin-bottom: 20px;">🎞️ SAT Animation System</h1>
+      <p style="font-size: 1.2em;">Menggunakan CSS Keyframes untuk animasi kompleks</p>
+    </div>
+  </section>
+  
+  <section>
+    <div class="sat-animation-flip-left sat-duration-1000">
+      <div class="card">
+        <h2>🔄 Animasi Flip</h2>
+        <p>Menggunakan sistem keyframe animation</p>
+      </div>
+    </div>
+  </section>
+  
+  <script src="https://cdn.jsdelivr.net/gh/bloxarynid/sat@main/script/animation.sat.js"></script>
 </body>
 </html>
 ```
@@ -344,7 +395,7 @@ document.addEventListener('sat:out', function(event) {
 
 🛠️ Custom Animasi
 
-Buat Animasi Custom dengan SAT
+Buat Animasi Custom dengan SAT System
 
 ```css
 /* Custom animation dengan SAT system */
@@ -475,11 +526,21 @@ Dibuat dengan ❤️ oleh Bloxaryn.id
 ---
 
 🎉 SAT v2.0.0
+
 Dual Animation System
 By Bloxaryn.id - 2026
 
 ---
 
-💡 Tips: Gunakan sistem transition untuk animasi sederhana, dan sistem animation untuk efek yang lebih kompleks dengan timing yang presisi!
+💡 Tips
 
-```
+Pilih sistem yang tepat untuk kebutuhan Anda:
+
+· 🔄 Transition System: Cocok untuk animasi sederhana, smooth, dan ringan
+· 🎞️ Animation System: Cocok untuk animasi kompleks dengan timing yang presisi
+
+Gunakan versi terpisah untuk optimasi:
+
+· Jika hanya butuh transition, gunakan SAT Transition System
+· Jika hanya butuh animation, gunakan SAT Animation System
+· Jika butuh keduanya, gunakan SAT Full Version
