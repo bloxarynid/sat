@@ -1,12 +1,12 @@
-// SAT (Scroll Animation Tool) - Complete Version
-// Bloxaryn.Id Tools v1.1.0
+// SAT (Scroll Animation Tool) - Dual System Version
+// Bloxaryn.Id Tools v2.0.0
 // Inspired by AOS (Animate On Scroll)
 (function(window, document) {
   'use strict';
   
   // Core SAT Class
   var SAT = {
-    version: '1.0.5',
+    version: '2.0.0',
     elements: [],
     observer: null,
     initialized: false,
@@ -33,7 +33,7 @@
         return;
       }
       
-      console.log('SAT: Initializing with ' + this.elements.length + ' elements');
+      console.log('SAT: Initializing with ' + this.elements.length + ' elements (Dual System)');
       
       // Create IntersectionObserver
       this.observer = new IntersectionObserver(
@@ -48,6 +48,13 @@
       this.elements.forEach(function(element) {
         this.observer.observe(element);
         
+        // Check for mixing conflict
+        if (this.hasMixingConflict(element)) {
+          console.error('SAT: Mixing conflict detected on element', element);
+          console.error('SAT: Cannot mix sat-transition-* and sat-animation-* classes');
+          this.resolveMixingConflict(element);
+        }
+        
         // Add optimization class
         if (!element.classList.contains('sat-optimize')) {
           element.classList.add('sat-optimize');
@@ -55,6 +62,7 @@
         
         // Add initial state classes
         this.addInitialClasses(element);
+        
       }.bind(this));
       
       this.initialized = true;
@@ -62,34 +70,65 @@
       // Initialize control functions
       this.initControls();
       
-      console.log('SAT: Ready!');
+      console.log('SAT: Ready! (Transition & Animation Systems)');
     },
     
-    // Get all elements with SAT classes
+    // Get all elements with SAT classes (Dual System)
     getElements: function() {
-      var selectors = [
-        // Fade Animations
-        '.sat-fade-up', '.sat-fade-down', '.sat-fade-left', '.sat-fade-right',
-        '.sat-fade-up-left', '.sat-fade-up-right', '.sat-fade-down-left', '.sat-fade-down-right',
+      var transitionSelectors = [
+        // Transition Fade Animations
+        '.sat-transition-fade-up', '.sat-transition-fade-down', '.sat-transition-fade-left', '.sat-transition-fade-right',
+        '.sat-transition-fade-up-left', '.sat-transition-fade-up-right', '.sat-transition-fade-down-left', '.sat-transition-fade-down-right',
         
-        // Zoom Animations
-        '.sat-zoom-in', '.sat-zoom-out',
-        '.sat-zoom-in-up', '.sat-zoom-in-down', '.sat-zoom-in-left', '.sat-zoom-in-right',
-        '.sat-zoom-out-up', '.sat-zoom-out-down', '.sat-zoom-out-left', '.sat-zoom-out-right',
+        // Transition Zoom Animations
+        '.sat-transition-zoom-in', '.sat-transition-zoom-out',
+        '.sat-transition-zoom-in-up', '.sat-transition-zoom-in-down', '.sat-transition-zoom-in-left', '.sat-transition-zoom-in-right',
+        '.sat-transition-zoom-out-up', '.sat-transition-zoom-out-down', '.sat-transition-zoom-out-left', '.sat-transition-zoom-out-right',
         
-        // Slide Animations
-        '.sat-slide-up', '.sat-slide-down', '.sat-slide-left', '.sat-slide-right',
+        // Transition Slide Animations
+        '.sat-transition-slide-up', '.sat-transition-slide-down', '.sat-transition-slide-left', '.sat-transition-slide-right',
         
-        // Flip Animations
-        '.sat-flip-left', '.sat-flip-right', '.sat-flip-up', '.sat-flip-down',
+        // Transition Flip Animations
+        '.sat-transition-flip-left', '.sat-transition-flip-right', '.sat-transition-flip-up', '.sat-transition-flip-down',
         
-        // Blur Animations
-        '.sat-blur', '.sat-blur-up', '.sat-blur-down', '.sat-blur-left', '.sat-blur-right',
-        '.sat-blur-zoom-in', '.sat-blur-zoom-out', '.sat-blur-glass'
+        // Transition Blur Animations
+        '.sat-transition-blur', '.sat-transition-blur-up', '.sat-transition-blur-down', '.sat-transition-blur-left', '.sat-transition-blur-right',
+        '.sat-transition-blur-zoom-in', '.sat-transition-blur-zoom-out', '.sat-transition-blur-glass'
+      ];
+      
+      var animationSelectors = [
+        // Animation Fade Animations
+        '.sat-animation-fade-up', '.sat-animation-fade-down', '.sat-animation-fade-left', '.sat-animation-fade-right',
+        '.sat-animation-fade-up-left', '.sat-animation-fade-up-right', '.sat-animation-fade-down-left', '.sat-animation-fade-down-right',
+        
+        // Animation Zoom Animations
+        '.sat-animation-zoom-in', '.sat-animation-zoom-out',
+        '.sat-animation-zoom-in-up', '.sat-animation-zoom-in-down', '.sat-animation-zoom-in-left', '.sat-animation-zoom-in-right',
+        '.sat-animation-zoom-out-up', '.sat-animation-zoom-out-down', '.sat-animation-zoom-out-left', '.sat-animation-zoom-out-right',
+        
+        // Animation Slide Animations
+        '.sat-animation-slide-up', '.sat-animation-slide-down', '.sat-animation-slide-left', '.sat-animation-slide-right',
+        
+        // Animation Flip Animations
+        '.sat-animation-flip-left', '.sat-animation-flip-right', '.sat-animation-flip-up', '.sat-animation-flip-down',
+        
+        // Animation Blur Animations
+        '.sat-animation-blur', '.sat-animation-blur-up', '.sat-animation-blur-down', '.sat-animation-blur-left', '.sat-animation-blur-right',
+        '.sat-animation-blur-zoom-in', '.sat-animation-blur-zoom-out', '.sat-animation-blur-glass'
       ];
       
       var elements = [];
-      selectors.forEach(function(selector) {
+      
+      // Get transition elements
+      transitionSelectors.forEach(function(selector) {
+        var found = document.querySelectorAll(selector);
+        if (found.length > 0) {
+          Array.prototype.push.apply(elements, Array.from(found));
+        }
+      });
+      
+      // Get animation elements
+      animationSelectors.forEach(function(selector) {
         var found = document.querySelectorAll(selector);
         if (found.length > 0) {
           Array.prototype.push.apply(elements, Array.from(found));
@@ -102,6 +141,46 @@
       });
       
       return elements;
+    },
+    
+    // Check if element has mixing conflict
+    hasMixingConflict: function(element) {
+      var className = element.className;
+      var hasTransition = false;
+      var hasAnimation = false;
+      
+      // Check for transition classes
+      if (className.includes('sat-transition-')) {
+        hasTransition = true;
+      }
+      
+      // Check for animation classes
+      if (className.includes('sat-animation-')) {
+        hasAnimation = true;
+      }
+      
+      // Conflict if both exist
+      return hasTransition && hasAnimation;
+    },
+    
+    // Resolve mixing conflict
+    resolveMixingConflict: function(element) {
+      var className = element.className;
+      
+      // Default: keep transition, remove animation
+      var regex = /sat-animation-[a-zA-Z-]+/g;
+      var animationClasses = className.match(regex);
+      
+      if (animationClasses) {
+        animationClasses.forEach(function(cls) {
+          element.classList.remove(cls);
+        });
+        console.warn('SAT: Removed animation classes (kept transition):', animationClasses);
+      }
+      
+      // Add warning class
+      element.classList.add('sat-mixing-warning');
+      element.style.outline = '2px solid red';
     },
     
     // Handle intersection events
@@ -121,16 +200,19 @@
       }.bind(this));
     },
     
-    // Animate element in
+    // Animate element in (Dual System compatible)
     animateIn: function(element) {
       if (!element.classList.contains('sat-animate')) {
         element.classList.add('sat-animate');
         element.classList.add('sat-visible');
         
-        // Dispatch custom event
-        this.dispatchEvent(element, 'sat:in');
+        // Determine which system is used
+        var system = this.detectAnimationSystem(element);
         
-        console.log('SAT: Animating in ->', element);
+        // Dispatch custom event with system info
+        this.dispatchEvent(element, 'sat:in', { system: system });
+        
+        console.log('SAT: Animating in ->', element, '(' + system + ' system)');
       }
     },
     
@@ -140,21 +222,35 @@
         element.classList.remove('sat-animate');
         element.classList.remove('sat-visible');
         
-        // Dispatch custom event
-        this.dispatchEvent(element, 'sat:out');
+        // Determine which system is used
+        var system = this.detectAnimationSystem(element);
         
-        console.log('SAT: Animating out ->', element);
+        // Dispatch custom event with system info
+        this.dispatchEvent(element, 'sat:out', { system: system });
+        
+        console.log('SAT: Animating out ->', element, '(' + system + ' system)');
       }
+    },
+    
+    // Detect which animation system is used
+    detectAnimationSystem: function(element) {
+      var className = element.className;
+      
+      if (className.includes('sat-transition-')) {
+        return 'transition';
+      } else if (className.includes('sat-animation-')) {
+        return 'animation';
+      }
+      
+      return 'unknown';
     },
     
     // Check if should animate out on scroll up
     shouldAnimateOut: function() {
-      // Default: don't animate out when scrolling up
-      // Change to true if you want reverse animations
       return false;
     },
     
-    // Add initial state classes
+    // Add initial state classes (Dual System)
     addInitialClasses: function(element) {
       // Check for duration classes
       var durationClasses = element.className.match(/sat-duration-\d+/g);
@@ -167,6 +263,15 @@
       if (!easingClasses) {
         element.classList.add('sat-easing-ease');
       }
+      
+      // Check for delay classes
+      var delayClasses = element.className.match(/sat-delay-\d+/g);
+      if (!delayClasses) {
+        element.classList.add('sat-delay-0');
+      }
+      
+      // Add visibility hidden for both systems
+      element.classList.add('sat-hidden');
     },
     
     // Initialize control functions
@@ -183,6 +288,7 @@
       window.resetSAT = function() {
         SAT.elements.forEach(function(element) {
           element.classList.remove('sat-animate', 'sat-visible');
+          element.classList.add('sat-hidden');
         });
         console.log('SAT: Reset all animations');
       };
@@ -201,6 +307,26 @@
         SAT.init();
         
         console.log('SAT: Refreshed');
+      };
+      
+      // Get system info for debugging
+      window.getSATSystemInfo = function() {
+        var info = {
+          totalElements: SAT.elements.length,
+          transitionElements: 0,
+          animationElements: 0,
+          mixedElements: 0
+        };
+        
+        SAT.elements.forEach(function(element) {
+          var system = SAT.detectAnimationSystem(element);
+          if (system === 'transition') info.transitionElements++;
+          if (system === 'animation') info.animationElements++;
+          if (SAT.hasMixingConflict(element)) info.mixedElements++;
+        });
+        
+        console.log('SAT System Info:', info);
+        return info;
       };
       
       // Add scroll to top button functionality
@@ -253,18 +379,21 @@
       return offsetTop;
     },
     
-    // Dispatch custom event
-    dispatchEvent: function(element, eventName) {
+    // Dispatch custom event with data
+    dispatchEvent: function(element, eventName, detail) {
       var event;
+      detail = detail || {};
+      detail.element = element;
+      
       try {
         event = new CustomEvent(eventName, {
-          detail: { element: element },
+          detail: detail,
           bubbles: true
         });
       } catch (e) {
         // For older browsers
         event = document.createEvent('CustomEvent');
-        event.initCustomEvent(eventName, true, true, { element: element });
+        event.initCustomEvent(eventName, true, true, detail);
       }
       
       element.dispatchEvent(event);
@@ -281,6 +410,11 @@
     
     refresh: function() {
       window.refreshSAT();
+    },
+    
+    // Get system info
+    getSystemInfo: function() {
+      return window.getSATSystemInfo();
     },
     
     // Get version
