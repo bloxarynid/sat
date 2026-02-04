@@ -1,4 +1,3 @@
-```markdown
 # SAT - Scroll Animation Tool 🚀
 
 [![SAT Banner](https://via.placeholder.com/800x200/4e65ff/ffffff?text=SAT+-+Scroll+Animation+Tool+v2.0.0)](https://bloxarynid.github.io/sat)
