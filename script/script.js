@@ -1,13 +1,12 @@
-
 // ====================================================
-//  with CONTINUOUS REPEAT Animation
+// SAT with CONTINUOUS REPEAT Animation
 // Animasi berulang SETIAP KALI masuk viewport
 // ====================================================
 
 (function(window, document) {
     'use strict';
     
-    var  = {
+    var SAT = {
         version: '2.1.0',
         elements: [],
         observer: null,
@@ -24,7 +23,7 @@
         init: function() {
             if (this.initialized) return;
             
-            this.log('🚀  Continuous Repeat Initializing...');
+            this.log('🚀 SAT Continuous Repeat Initializing...');
             
             // Get elements
             this.elements = this.getElements();
@@ -53,13 +52,13 @@
             
             this.initialized = true;
             this.initControls();
-            this.log('✅  Continuous Repeat Ready!');
+            this.log('✅ SAT Continuous Repeat Ready!');
         },
         
         getElements: function() {
             const selectors = [
-                '.-fade-up', '.-fade-down', '.-fade-left', '.-fade-right',
-                '.-zoom-in', '.-zoom-out'
+                '.sat-fade-up', '.sat-fade-down', '.sat-fade-left', '.sat-fade-right',
+                '.sat-zoom-in', '.sat-zoom-out'
             ];
             
             let elements = [];
@@ -74,7 +73,7 @@
         // ✅ INI YANG PENTING: Reset element state setiap kali
         resetElement: function(element) {
             // Hapus semua kelas animasi
-            element.classList.remove('-animate', '-visible');
+            element.classList.remove('sat-animate', 'sat-visible');
             
             // Reset transition untuk memastikan animasi fresh
             const style = window.getComputedStyle(element);
@@ -91,7 +90,7 @@
         handleIntersection: function(entries) {
             entries.forEach(entry => {
                 const element = entry.target;
-                const isContinuous = element.classList.contains('-continuous') || 
+                const isContinuous = element.classList.contains('sat-continuous') || 
                                      this.settings.continuousRepeat;
                 
                 if (entry.isIntersecting) {
@@ -123,32 +122,32 @@
         
         animateIn: function(element) {
             // Pastikan tidak sedang animasi
-            if (element.classList.contains('-animate')) {
+            if (element.classList.contains('sat-animate')) {
                 this.resetElement(element);
             }
             
             // Tambah kelas animasi
-            element.classList.add('-animate', '-visible');
+            element.classList.add('sat-animate', 'sat-visible');
             
             // Dispatch event
-            this.dispatchEvent(element, ':in');
+            this.dispatchEvent(element, 'sat:in');
             
             if (this.settings.debug) {
                 this.log(`✨ ANIMATE IN: ${element.className}`);
             }
             
             // ✅ AUTO RESET setelah animasi selesai (untuk continuous)
-            const isContinuous = element.classList.contains('-continuous') || 
+            const isContinuous = element.classList.contains('sat-continuous') || 
                                this.settings.continuousRepeat;
             
             if (isContinuous) {
                 // Cari duration dari kelas atau gunakan default
-                const durationMatch = element.className.match(/-duration-(\d+)/);
+                const durationMatch = element.className.match(/sat-duration-(\d+)/);
                 const duration = durationMatch ? parseInt(durationMatch[1]) : 500;
                 
                 // Reset setelah animasi selesai
                 setTimeout(() => {
-                    if (!element.classList.contains('-keep-visible')) {
+                    if (!element.classList.contains('sat-keep-visible')) {
                         this.resetElement(element);
                     }
                 }, duration + 100);
@@ -156,8 +155,8 @@
         },
         
         animateOut: function(element) {
-            element.classList.remove('-animate', '-visible');
-            this.dispatchEvent(element, ':out');
+            element.classList.remove('sat-animate', 'sat-visible');
+            this.dispatchEvent(element, 'sat:out');
             
             if (this.settings.debug) {
                 this.log(`↩️ ANIMATE OUT: ${element.className}`);
@@ -170,36 +169,36 @@
         
         initControls: function() {
             // Toggle continuous repeat
-            window.toggleContinuous = function() {
-                .settings.continuousRepeat = !.settings.continuousRepeat;
-                .log(`🔄 Continuous Repeat: ${.settings.continuousRepeat ? 'ON' : 'OFF'}`);
+            window.toggleContinuousSAT = function() {
+                SAT.settings.continuousRepeat = !SAT.settings.continuousRepeat;
+                SAT.log(`🔄 Continuous Repeat: ${SAT.settings.continuousRepeat ? 'ON' : 'OFF'}`);
                 
                 // Reset all elements
-                .elements.forEach(el => .resetElement(el));
+                SAT.elements.forEach(el => SAT.resetElement(el));
             };
             
             // Enable continuous
-            window.enableContinuous = function() {
-                .settings.continuousRepeat = true;
-                .log('🔄 Continuous Repeat ENABLED');
-                .elements.forEach(el => .resetElement(el));
+            window.enableContinuousSAT = function() {
+                SAT.settings.continuousRepeat = true;
+                SAT.log('🔄 Continuous Repeat ENABLED');
+                SAT.elements.forEach(el => SAT.resetElement(el));
             };
             
             // Disable continuous
-            window.disableContinuous = function() {
-                .settings.continuousRepeat = false;
-                .log('🔄 Continuous Repeat DISABLED');
+            window.disableContinuousSAT = function() {
+                SAT.settings.continuousRepeat = false;
+                SAT.log('🔄 Continuous Repeat DISABLED');
             };
             
             // Manual trigger animation
-            window.triggerAnimation = function(selector) {
+            window.triggerSATAnimation = function(selector) {
                 const elements = selector ? 
                     document.querySelectorAll(selector) : 
-                    .elements;
+                    SAT.elements;
                 
                 elements.forEach(el => {
-                    .resetElement(el);
-                    setTimeout(() => .animateIn(el), 50);
+                    SAT.resetElement(el);
+                    setTimeout(() => SAT.animateIn(el), 50);
                 });
             };
         },
@@ -219,7 +218,7 @@
         // Enable continuous for specific elements
         enableContinuousFor: function(selector) {
             document.querySelectorAll(selector).forEach(el => {
-                el.classList.add('-continuous');
+                el.classList.add('sat-continuous');
                 this.resetElement(el);
             });
             this.log(`✅ Continuous Repeat ENABLED for ${selector}`);
@@ -257,16 +256,15 @@
         
         log: function(message) {
             if (this.settings.debug) {
-                console.log(`📦 : ${message}`);
+                console.log(`📦 SAT: ${message}`);
             }
         }
     };
     
     // Initialize
-    document.addEventListener('DOMContentLoaded', () => .init());
+    document.addEventListener('DOMContentLoaded', () => SAT.init());
     
     // Expose to global
-    window. = ;
+    window.SAT = SAT;
     
 })(window, document);
-  
