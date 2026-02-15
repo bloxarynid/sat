@@ -1,12 +1,12 @@
 // SAT (Scroll Animation Tool) - Complete Version
-// Bloxaryn.Id Tools v1.1.0
+// Bloxaryn.Id Tools v2.0.0
 // Inspired by AOS (Animate On Scroll)
 (function(window, document) {
   'use strict';
   
   // Core SAT Class
   var SAT = {
-    version: '1.0.5',
+    version: '2.0.0',
     elements: [],
     observer: null,
     initialized: false,
